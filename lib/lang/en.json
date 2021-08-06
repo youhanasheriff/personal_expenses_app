@@ -1,0 +1,17 @@
+{
+    "app_name": "Personal expenses",
+    "no_transaction_is_done_yet" : "No transaction is done yet!",
+    "transaction":"Transactions",
+    "new_tx_title":"Title",
+    "new_tc_amount":"Amount",
+    "no_date_chosen":"No date Chosen",
+    "choose_date":"Choose date",
+    "add_transaction":"Add Transaction",
+    "filter_transaction":"Filter Transactions",
+    "show_all_transaction":"Show all transactions ",
+    "clear_all_transaction":"Clear all Transactions",
+    "picked_date":"Picked date",
+    "languages":"Languages",
+    "currency":"Currency"
+}
+

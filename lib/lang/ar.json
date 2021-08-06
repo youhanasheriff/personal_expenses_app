@@ -1,0 +1,17 @@
+{
+    "app_name": "المصاريف الشخصية",
+    "no_transaction_is_done_yet" : "لم تتم أي معاملة حتى الآن",
+    "transaction":"معاملات تجارية",
+    "new_tx_title":"عنوان",
+    "new_tc_amount":"كمية",
+    "no_date_chosen":"لم يتم إختيار التاريخ",
+    "choose_date":"إختيار التاريخ",
+    "add_transaction":"أضف معاملة",
+    "filter_transaction":"تصفية المعاملات",
+    "show_all_transaction":"عرض كل المعاملات",
+    "clear_all_transaction":"مسح كل المعاملات",
+    "picked_date":"التاريخ المختار",
+    "languages":"اللغات",
+    "currency":"عملة"
+}
+
