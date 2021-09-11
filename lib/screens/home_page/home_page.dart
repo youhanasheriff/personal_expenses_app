@@ -220,8 +220,11 @@ class _HomePageState extends State<HomePage> {
   Column recentTx() {
     return Column(
       children: [
-        SessionTitle("Recent Transactions", true,
-            action: jumpTo2), //TODO change
+        SessionTitle(
+          LocaleKeys.recent_transaction.tr(),
+          true,
+          action: jumpTo2,
+        ),
         recentTransaction(),
       ],
     );
@@ -290,7 +293,9 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 _transaction.length == 0
                     ? customSnackbar(
-                        LocaleKeys.no_transaction_is_done_yet.tr(), "Ok")
+                        LocaleKeys.no_transaction_is_done_yet.tr(),
+                        LocaleKeys.ok.tr(),
+                      )
                     : _pageController.jumpToPage(1);
               },
               icon: SvgPicture.asset(

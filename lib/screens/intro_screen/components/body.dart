@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_app/translations/locale_keys.g.dart';
 
 import '../../../constants/constants.dart';
 import '../../../screens/pin_screen/setup_pin.dart';
@@ -16,23 +18,20 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> pageData = [
-    //TODO change
     {
       "image": "assets/images/intro/cash_on_hand.png",
-      "title": "Gain total control \n of your money",
-      "subText":
-          "Become your own expenses manager\n and make every cent \ncount"
+      "title": LocaleKeys.gain_total_control_of_your_money.tr(),
+      "subText": LocaleKeys.become_your_ouw_expense_manager.tr()
     },
     {
       "image": "assets/images/intro/list_and_cash.png",
-      "title": "Know where your \nmoney goes",
-      "subText":
-          "Track your spendings easily,\n with categories and financial report "
+      "title": LocaleKeys.know_where_your_money_goes.tr(),
+      "subText": LocaleKeys.track_your_spending.tr()
     },
     {
       "image": "assets/images/intro/plan_pad.png",
-      "title": "Plan what’s yours",
-      "subText": "Get your own report with categories"
+      "title": LocaleKeys.plan_whats_yours.tr(),
+      "subText": LocaleKeys.get_your_own_report.tr()
     },
   ];
 
@@ -90,7 +89,7 @@ class _BodyState extends State<Body> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 20.0, vertical: 2.0),
                   child: BigButton(
-                    text: "Continue", //TODO change
+                    text: LocaleKeys.continue_page.tr(),
                     press: currentPage < 2
                         ? () {
                             _pageController.nextPage(
@@ -111,7 +110,7 @@ class _BodyState extends State<Body> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20.0, vertical: 2.0),
                     child: BigButton(
-                      text: "Skip", //TODO change
+                      text: LocaleKeys.skip.tr(),
                       press: () {
                         _pageController.jumpToPage(2);
                       },

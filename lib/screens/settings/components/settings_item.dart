@@ -13,7 +13,9 @@ class SettingsItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15.0, top: 8.0),
+      padding: (Directionality.of(context).toString() == "TextDirection.ltr")
+          ? const EdgeInsets.only(left: 15.0, top: 8.0)
+          : const EdgeInsets.only(right: 15.0, top: 8.0),
       child: InkWell(
         onTap: () {
           action(context);

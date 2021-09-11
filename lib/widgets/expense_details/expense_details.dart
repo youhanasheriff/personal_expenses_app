@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/translations/locale_keys.g.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:intl/intl.dart';
 
 import '../../helpers/helpers.dart';
@@ -140,7 +142,7 @@ class ExpenseDetails extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15.0),
                 ),
                 child: Text(
-                  "Description", // TODO change
+                  LocaleKeys.description.tr(),
                   style: TextStyle(
                     color: kPrimaryTextColor,
                     fontSize: 16,
@@ -153,7 +155,7 @@ class ExpenseDetails extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 8.0, right: 8.0, top: 5.0),
                 child: Text(
                   tx.description == "" || tx.description == null
-                      ? "There is no description available...(" // TODO change
+                      ? LocaleKeys.there_is_no_description_available.tr()
                       : tx.description!,
                   softWrap: true,
                   style: TextStyle(

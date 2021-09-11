@@ -77,8 +77,6 @@ class _AddTransactionState extends State<AddTransaction> {
     });
   }
 
-  String? get _getDateTime {}
-
   @override
   Widget build(BuildContext context) {
     var addTx = ModalRoute.of(context)!.settings.arguments as AddTx;
@@ -102,7 +100,7 @@ class _AddTransactionState extends State<AddTransaction> {
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         centerTitle: true,
-        title: Text("Expense"), //TODO change
+        title: Text(LocaleKeys.expense.tr()),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -110,8 +108,10 @@ class _AddTransactionState extends State<AddTransaction> {
           children: [
             Container(
               width: double.infinity,
-              // height: 132,
-              margin: EdgeInsets.only(top: 130, left: 25.0),
+              margin:
+                  (Directionality.of(context).toString() == "TextDirection.ltr")
+                      ? const EdgeInsets.only(top: 130, left: 25.0)
+                      : const EdgeInsets.only(top: 130, right: 25.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -153,7 +153,7 @@ class _AddTransactionState extends State<AddTransaction> {
                         ),
                         controller: amountController,
                         decoration: InputDecoration(
-                          hintText: "Enter amount", // TODO change
+                          hintText: LocaleKeys.enter_amount.tr(),
                           hintStyle: TextStyle(
                             color: Colors.white.withOpacity(0.5),
                             fontWeight: FontWeight.bold,
@@ -213,7 +213,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       focusNode: _focusNode2,
                       controller: descriptionController,
                       decoration: InputDecoration(
-                        hintText: "Description", // TODO change
+                        hintText: LocaleKeys.description.tr(),
                         hintStyle: TextStyle(color: kBaseLight20),
                         border: OutlineInputBorder(
                           borderSide: BorderSide(

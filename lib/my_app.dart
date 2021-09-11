@@ -8,6 +8,7 @@ import './screens/pin_screen/pin_enter.dart';
 import './config/routes.dart';
 import './constants/constants.dart';
 import './screens/intro_screen/intro_screen.dart';
+import 'screens/set_lang/set_lang.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     if (_isPINActive == "false" || _isPINActive == false) {
       return HomePage.routeName;
     } else if (_tempPIN == null || _tempPIN == "") {
-      return IntroScreen.routeName;
+      return SetLang.routeName;
     } else {
       return PinEnter.routeName;
     }

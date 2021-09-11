@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_app/translations/locale_keys.g.dart';
 
 import './pin_code_screen.dart';
 import '../../screens/home_page/home_page.dart';
@@ -67,10 +69,10 @@ class _PinEnterState extends State<PinEnter> {
     return PinScreenPage(
       eraseNumber: _eraseNumber,
       pin: _pin,
-      title: "Enter Your PIN", // TODO change
+      title: LocaleKeys.enter_your_pin.tr(),
       pinEnter: _pinEnter,
       pinCompare: _isPINTrue,
-      errorText: "Wrong PIN!!", // TODO change
+      errorText: LocaleKeys.wrong_pin.tr(),
     );
   }
 }

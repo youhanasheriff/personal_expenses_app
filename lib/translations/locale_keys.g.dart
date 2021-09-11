@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const app_name = 'app_name';
   static const no_transaction_is_done_yet = 'no_transaction_is_done_yet';
   static const transaction = 'transaction';
@@ -15,8 +15,7 @@ abstract class LocaleKeys {
   static const picked_date = 'picked_date';
   static const languages = 'languages';
   static const currency = 'currency';
-  static const notification_will_be_added_in_update =
-      'notification_will_be_added_in_update';
+  static const notification_will_be_added_in_update = 'notification_will_be_added_in_update';
   static const all_transactions = 'all_transactions';
   static const today = 'today';
   static const yesterday = 'yesterday';
@@ -54,4 +53,31 @@ abstract class LocaleKeys {
   static const pin = 'pin';
   static const help = 'help';
   static const about = 'about';
+  static const gain_total_control_of_your_money = 'gain_total_control_of_your_money';
+  static const become_your_ouw_expense_manager = 'become_your_ouw_expense_manager';
+  static const know_where_your_money_goes = 'know_where_your_money_goes';
+  static const track_your_spending = 'track_your_spending';
+  static const plan_whats_yours = 'plan_whats_yours';
+  static const get_your_own_report = 'get_your_own_report';
+  static const continue_page = 'continue_page';
+  static const skip = 'skip';
+  static const lets_setup_your_pin = 'lets_setup_your_pin';
+  static const ok_re_type_your_pin = 'ok_re_type_your_pin';
+  static const please_enter_the_same_pin = 'please_enter_the_same_pin';
+  static const enter_your_pin = 'enter_your_pin';
+  static const wrong_pin = 'wrong_pin';
+  static const expenses = 'expenses';
+  static const enter_amount = 'enter_amount';
+  static const description = 'description';
+  static const you_are_set = 'you_are_set';
+  static const tap_to_continue = 'tap_to_continue';
+  static const settings = 'settings';
+  static const notification = 'notification';
+  static const ok = 'ok';
+  static const recent_transaction = 'recent_transaction';
+  static const none = 'none';
+  static const security = 'security';
+  static const we_will_add_this_page_soon = 'we_will_add_this_page_soon';
+  static const there_is_no_description_available = 'there_is_no_description_available';
+
 }

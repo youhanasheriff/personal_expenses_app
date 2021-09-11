@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
+import '../../translations/locale_keys.g.dart';
 import '../../constants/constants.dart';
 import '../../screens/home_page/home_page.dart';
 
@@ -32,7 +34,7 @@ class AllSet extends StatelessWidget {
                 ),
                 SizedBox(height: 25),
                 Text(
-                  "You are set!!", // TODO change
+                  LocaleKeys.you_are_set.tr(),
                   style: TextStyle(
                     color: kPrimaryTextColor,
                     fontSize: 25,
@@ -41,7 +43,7 @@ class AllSet extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  "Tap to continue...", // TODO change
+                  LocaleKeys.tap_to_continue.tr(),
                   style: TextStyle(
                     color: kPrimaryTextColor,
                     fontWeight: FontWeight.bold,

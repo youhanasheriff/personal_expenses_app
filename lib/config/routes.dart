@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/set_lang/set_lang.dart';
 import '../screens/home_page/home_page.dart';
 import '../screens/add_transaction.dart/add_transaction.dart';
 import '../screens/pin_screen/pin_enter.dart';
@@ -15,4 +16,5 @@ final Map<String, WidgetBuilder> routes = {
   PinEnter.routeName: (context) => PinEnter(),
   AddTransaction.routeName: (context) => AddTransaction(),
   SettingsPage.routeName: (context) => SettingsPage(),
+  SetLang.routeName: (context) => SetLang(),
 };

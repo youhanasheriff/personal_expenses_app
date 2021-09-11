@@ -42,7 +42,7 @@ class HomeTopPanel extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  tooltip: "Settings", // TODO change
+                  tooltip: LocaleKeys.settings.tr(),
                   onPressed: () {
                     Navigator.pushReplacementNamed(
                         context, SettingsPage.routeName);
@@ -86,11 +86,11 @@ class HomeTopPanel extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  tooltip: "Notification", // TODO chnage
+                  tooltip: LocaleKeys.notification.tr(),
                   onPressed: () {
                     showSnackBar(
-                      "Notification will be added in future update!", // TODO chnage
-                      "Ok", // TODO chnage
+                      LocaleKeys.notification_will_be_added_in_update.tr(),
+                      LocaleKeys.ok.tr(),
                     );
                   },
                   icon: SvgPicture.asset(
@@ -137,7 +137,7 @@ class HomeTopPanel extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Expenses", // TODO chnage
+                        LocaleKeys.expenses.tr(),
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,

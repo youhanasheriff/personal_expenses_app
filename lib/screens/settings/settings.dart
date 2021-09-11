@@ -46,14 +46,14 @@ class _SettingsPageState extends State<SettingsPage> {
       isPINActive = _tempActive == "false";
     }
     pinPin = LocaleKeys.pin.tr();
-    pinNone = "None"; // TODO change
+    pinNone = LocaleKeys.none.tr();
     String? _tempPIN = TransactionSharedPreferences.getSecurityPIN();
     if (_tempPIN == null || _tempPIN == "") {
       isPINAlreadyThere = false;
       btnTitlePIN = pinNone;
     } else {
       isPINAlreadyThere = true;
-      btnTitlePIN = LocaleKeys.pin.tr();
+      btnTitlePIN = pinPin;
     }
   }
 
@@ -77,7 +77,7 @@ class _SettingsPageState extends State<SettingsPage> {
         "action": _actionLanguage,
       },
       {
-        "title": "Security", // TODO change
+        "title": LocaleKeys.security.tr(),
         "btnTitle": btnTitlePIN,
         "action": _actionPIN,
       },
@@ -199,10 +199,10 @@ class _SettingsPageState extends State<SettingsPage> {
     _key.currentState!.showSnackBar(
       SnackBar(
         content: Text(
-          "We will add this page soon", // TODO change
+          LocaleKeys.we_will_add_this_page_soon.tr(),
         ),
         action: SnackBarAction(
-          label: "Ok",
+          label: LocaleKeys.ok.tr(),
           onPressed: () {},
         ),
       ),
@@ -220,14 +220,18 @@ class _SettingsPageState extends State<SettingsPage> {
         key: _key,
         appBar: AppBar(
           leading: IconButton(
-            icon: SvgPicture.asset("assets/icons/arrow-left.svg"),
+            icon: SvgPicture.asset(
+              (Directionality.of(context).toString() == "TextDirection.ltr")
+                  ? "assets/icons/arrow-left.svg"
+                  : "assets/icons/arrow-right.svg",
+            ),
             onPressed: () {
               Navigator.pushReplacementNamed(context, HomePage.routeName);
             },
           ),
           elevation: 1.5,
           title: Text(
-            "Settings", // TODO change
+            LocaleKeys.settings.tr(),
             style: TextStyle(
               color: Colors.black,
             ),
