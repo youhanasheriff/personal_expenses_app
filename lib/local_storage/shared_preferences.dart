@@ -1,12 +1,15 @@
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/transaction.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class TransactionSharedPreferences {
   static SharedPreferences? _preferences;
   static const _keyListTransaction = "UserTransactionList";
   static const _keyCurrency = "currency";
+  static const _keyPIN = "securityPIN";
+  static const _keyIsPINActive = "PINActive";
+  static const _keyLang = "lang";
 
   static Future init() async {
     return _preferences = await SharedPreferences.getInstance();
@@ -17,20 +20,9 @@ class TransactionSharedPreferences {
       return [];
     }
     List<Object> _tempTransList = [];
-    Object _tempTrans = {};
 
     transList.forEach((data) {
-      String id, title, amount, date;
-      id = data.id!;
-      title = data.title!;
-      amount = data.amount!.toString();
-      date = data.date!.toIso8601String();
-      _tempTrans = {
-        "id": id,
-        "title": title,
-        "amount": amount,
-        "date": date,
-      };
+      Object _tempTrans = data.toJson();
       _tempTransList.add(_tempTrans);
     });
 
@@ -43,22 +35,12 @@ class TransactionSharedPreferences {
   static getTransactions() {
     String _temp = _preferences!.getString(_keyListTransaction) ?? "";
     if ((_temp == "")) {
-      return "";
+      return <Transaction>[];
     } else {
       List<Transaction> _tempTrans = [];
       List<dynamic> _tempTObj = jsonDecode(_temp);
-
       _tempTObj.forEach((data) {
-        String id, title;
-        double amount;
-        DateTime? date;
-        id = data["id"];
-        title = data["title"];
-        amount = double.parse(data["amount"]);
-        date = DateTime.tryParse(data["date"]);
-
-        Transaction _finalTrans =
-            Transaction(id: id, title: title, amount: amount, date: date);
+        Transaction _finalTrans = Transaction.fromJson(data);
         _tempTrans.add(_finalTrans);
       });
       return _tempTrans;
@@ -71,5 +53,35 @@ class TransactionSharedPreferences {
 
   static Future setCurrency(String cSimbol) async {
     return await _preferences!.setString(_keyCurrency, cSimbol);
+  }
+
+  static getSecurityPIN() {
+    return _preferences!.getString(_keyPIN);
+  }
+
+  static Future setSecurityPIN(String pin) async {
+    return await _preferences!.setString(_keyPIN, pin);
+  }
+
+  static Future setIsPINActive(bool isActive) async {
+    if (isActive) {
+      return await _preferences!
+          .setString(_keyIsPINActive, isActive.toString());
+    } else {
+      return await _preferences!
+          .setString(_keyIsPINActive, isActive.toString());
+    }
+  }
+
+  static getIsPINActive() {
+    return _preferences!.getString(_keyIsPINActive);
+  }
+
+  static setLang(String lang) async {
+    return await _preferences!.setString(_keyLang, lang);
+  }
+
+  static getLang() {
+    return _preferences!.getString(_keyLang);
   }
 }

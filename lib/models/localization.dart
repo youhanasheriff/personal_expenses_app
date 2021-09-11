@@ -50,7 +50,7 @@ class CurrencySimbols {
 }
 
 // personal expenses            = المصاريف الشخصية
-//  No transaction is done yet! = لم تتم أي معاملة حتى الآن
+// No transaction is done yet! = لم تتم أي معاملة حتى الآن
 // Transactions                 = معاملات تجارية 
 // Title                        = عنوان
 // Amount                       = كمية 

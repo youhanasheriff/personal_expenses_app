@@ -12,15 +12,43 @@
     "clear_all_transaction":"அனைத்து பரிமாற்றங்களையும் அழிக்கவும்",
     "picked_date":"தேர்ந்தெடுக்கப்பட்ட தேதி",
     "languages":"மொழிகள்",
-    "currency":"நாணயம்"
+    "currency":"நாணயம்",
+    "notification_will_be_added_in_update":"",
+    "all_transactions":"",
+    "today":"",
+    "yesterday":"",
+    "before_yesterday":"",
+    "total_spent":"",
+    "s0selected":"",
+    "reset":"",
+    "date":"",
+    "sort_by":"",
+    "highest":"",
+    "lowest":"",
+    "newest":"",
+    "oldest":"",
+    "category":"",
+    "select_category":"",
+    "choose_sategory":"",
+    "shopping":"",
+    "food":"",
+    "bank":"",
+    "subscription":"",
+    "transportation":"",
+    "apply":"",
+    "expense":"",
+    "how_much":"",
+    "choose_date_time":"",
+    "add_expense":"",
+    "default_date_time":"",
+    "expenses_graph":"",
+    "not_enough_data_for_graph":"",
+    "day":"",
+    "week":"",
+    "month":"",
+    "year":"",
+    "see_all":"",
+    "pin":"",
+    "help":"",
+    "about":""
 }
-
-
-
-
-
-
-
-
-
-

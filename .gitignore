@@ -9,7 +9,8 @@
 .history
 .svn/
 .fvm/
-
+App_Release/
+lang.txt
 
 # IntelliJ related
 *.iml
