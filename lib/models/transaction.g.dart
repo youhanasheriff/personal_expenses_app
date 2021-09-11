@@ -7,14 +7,16 @@ part of 'transaction.dart';
 // **************************************************************************
 
 Transaction _$TransactionFromJson(Map<String, dynamic> json) {
+  String amountString = json['amount'].toString();
+  double amount = double.parse(amountString);
   return Transaction(
     id: json['id'] as String,
     title: json['title'] as String,
-    amount: (json['amount'] as num).toDouble(),
-    dateTime: json['dateTime'] == null
-        ? null
-        : DateTime.parse(json['dateTime'] as String),
-    category: json['category'] as String,
+    amount: amount,
+    date: DateTime.parse(json['date'] as String),
+    category: json['category']  == null
+        ? ""
+        : json['category'] as String,
     description: json['description'] as String?,
   );
 }
@@ -24,7 +26,7 @@ Map<String, dynamic> _$TransactionToJson(Transaction instance) =>
       'id': instance.id,
       'title': instance.title,
       'amount': instance.amount,
-      'dateTime': instance.dateTime?.toIso8601String(),
+      'date': instance.date.toIso8601String(),
       'category': instance.category,
       'description': instance.description,
     };

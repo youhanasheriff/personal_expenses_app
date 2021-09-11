@@ -52,41 +52,41 @@ class _HomePageState extends State<HomePage> {
     String _selectedDate = DateFormat.yMd().format(DateTime.now());
     List<Transaction> _temp = [];
     _transaction.forEach((tx) {
-      if (DateFormat.yMd().format(tx.dateTime!) == _selectedDate) {
+      if (DateFormat.yMd().format(tx.date) == _selectedDate) {
         _temp.add(tx);
       }
     });
-    _temp.sort((a, b) => a.dateTime!.compareTo(b.dateTime!));
+    _temp.sort((a, b) => a.date.compareTo(b.date));
     return _temp;
   }
 
   List<Transaction> get _weekTransactions {
     List<Transaction> _temp = _transaction.where((tx) {
-      return tx.dateTime!.isAfter(DateTime.now().subtract(Duration(days: 7)));
+      return tx.date.isAfter(DateTime.now().subtract(Duration(days: 7)));
     }).toList();
-    _temp.sort((a, b) => a.dateTime!.compareTo(b.dateTime!));
+    _temp.sort((a, b) => a.date.compareTo(b.date));
     return _temp;
   }
 
   List<Transaction> get _recentTransaction {
     List<Transaction> _temp = _weekTransactions;
-    _temp.sort((a, b) => b.dateTime!.compareTo(a.dateTime!));
+    _temp.sort((a, b) => b.date.compareTo(a.date));
     return _temp;
   }
 
   List<Transaction> get _monthTransactions {
     List<Transaction> _temp = _transaction.where((tx) {
-      return tx.dateTime!.isAfter(DateTime.now().subtract(Duration(days: 28)));
+      return tx.date.isAfter(DateTime.now().subtract(Duration(days: 28)));
     }).toList();
-    _temp.sort((a, b) => a.dateTime!.compareTo(b.dateTime!));
+    _temp.sort((a, b) => a.date.compareTo(b.date));
     return _temp;
   }
 
   List<Transaction> get _yearTransactions {
     List<Transaction> _temp = _transaction.where((tx) {
-      return tx.dateTime!.isAfter(DateTime.now().subtract(Duration(days: 365)));
+      return tx.date.isAfter(DateTime.now().subtract(Duration(days: 365)));
     }).toList();
-    _temp.sort((a, b) => a.dateTime!.compareTo(b.dateTime!));
+    _temp.sort((a, b) => a.date.compareTo(b.date));
     return _temp;
   }
 
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
       description: description,
       category: category,
       amount: txAmount,
-      dateTime: selectedDate,
+      date: selectedDate,
       id: DateTime.now().toString(),
     );
     setState(() {
@@ -225,6 +225,8 @@ class _HomePageState extends State<HomePage> {
           true,
           action: jumpTo2,
         ),
+        _recentTransaction.length == 0 ?
+        NoDataText(LocaleKeys.no_transaction_is_done_yet.tr()) :
         recentTransaction(),
       ],
     );

@@ -106,6 +106,15 @@ class _SetLangState extends State<SetLang> {
                       color: [kPrimaryColor100, kPrimaryColor20],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "* You can change it later in setting",
+                      style: TextStyle(
+                        color: kBaseLight20,
+                      ),
+                    ),
+                  ),
                   Spacer(),
                 ],
               ),

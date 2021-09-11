@@ -81,7 +81,7 @@ class Helpers {
 
   String get getTime {
     var v =
-        "${transaction.dateTime!.hour}:${transaction.dateTime!.minute}:${transaction.dateTime!.second}";
+        "${transaction.date.hour}:${transaction.date.minute}:${transaction.date.second}";
     return DateFormat.jm().format(DateFormat("hh:mm:ss").parse(v));
   }
 }

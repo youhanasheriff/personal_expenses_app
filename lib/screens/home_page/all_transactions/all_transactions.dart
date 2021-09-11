@@ -44,11 +44,11 @@ class _AllTransactionsState extends State<AllTransactions> {
     String _selectedDate = DateFormat.yMd().format(DateTime.now());
     List<Transaction> _temp = [];
     transaction.forEach((tx) {
-      if (DateFormat.yMd().format(tx.dateTime!) == _selectedDate) {
+      if (DateFormat.yMd().format(tx.date) == _selectedDate) {
         _temp.add(tx);
       }
     });
-    _temp.sort((a, b) => b.dateTime!.compareTo(a.dateTime!));
+    _temp.sort((a, b) => b.date.compareTo(a.date));
     return _temp;
   }
 
@@ -57,19 +57,19 @@ class _AllTransactionsState extends State<AllTransactions> {
         DateFormat.yMd().format(DateTime.now().subtract(Duration(days: 1)));
     List<Transaction> _temp = [];
     transaction.forEach((tx) {
-      if (DateFormat.yMd().format(tx.dateTime!) == _selectedDate) {
+      if (DateFormat.yMd().format(tx.date) == _selectedDate) {
         _temp.add(tx);
       }
     });
-    _temp.sort((a, b) => b.dateTime!.compareTo(a.dateTime!));
+    _temp.sort((a, b) => b.date.compareTo(a.date));
     return _temp;
   }
 
   List<Transaction> get _beforeYesterdayTransactions {
     List<Transaction> _temp = transaction.where((tx) {
-      return tx.dateTime!.isBefore(DateTime.now().subtract(Duration(days: 2)));
+      return tx.date.isBefore(DateTime.now().subtract(Duration(days: 2)));
     }).toList();
-    _temp.sort((a, b) => b.dateTime!.compareTo(a.dateTime!));
+    _temp.sort((a, b) => b.date.compareTo(a.date));
     return _temp;
   }
 
@@ -121,7 +121,7 @@ class _AllTransactionsState extends State<AllTransactions> {
     if (selectedDate != null) {
       filteredTransaction = [];
       transaction.forEach((tx) {
-        if (DateFormat.yMd().format(tx.dateTime!) ==
+        if (DateFormat.yMd().format(tx.date) ==
             DateFormat.yMd().format(selectedDate)) {
           setState(() {
             filteredTransaction.add(tx);
@@ -134,12 +134,12 @@ class _AllTransactionsState extends State<AllTransactions> {
       if (sortBy == Categories.newest)
         setState(() {
           filteredTransaction
-              .sort((a, b) => b.dateTime!.compareTo(a.dateTime!));
+              .sort((a, b) => b.date.compareTo(a.date));
         });
       if (sortBy == Categories.oldest)
         setState(() {
           filteredTransaction
-              .sort((a, b) => a.dateTime!.compareTo(b.dateTime!));
+              .sort((a, b) => a.date.compareTo(b.date));
         });
 
       if (sortBy == Categories.highest)

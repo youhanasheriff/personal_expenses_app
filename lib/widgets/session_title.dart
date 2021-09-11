@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_app/translations/locale_keys.g.dart';
 
 import '../config/size_config.dart';
 import '../constants/constants.dart';
@@ -6,13 +8,14 @@ import '../constants/constants.dart';
 class SessionTitle extends StatelessWidget {
   final bool showBtn;
   final title;
-  final actionText;
+  var actionText;
   final action;
-  const SessionTitle(String this.title, this.showBtn,
-      {this.action, this.actionText = "See All"});
+  SessionTitle(String this.title, this.showBtn,
+      {this.action, this.actionText});
 
   @override
   Widget build(BuildContext context) {
+    actionText = LocaleKeys.see_all.tr();
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: getPropotionalScreenWidth(12),

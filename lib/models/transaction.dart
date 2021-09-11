@@ -7,7 +7,7 @@ class Transaction {
   final String id;
   final String title;
   final double amount;
-  final DateTime? dateTime;
+  final DateTime date;
   final String category;
   final String? description;
 
@@ -15,7 +15,7 @@ class Transaction {
     required this.id,
     required this.title,
     required this.amount,
-    required this.dateTime,
+    required this.date,
     required this.category,
     this.description,
   });

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import './pin_code_screen.dart';
 import '../../local_storage/shared_preferences.dart';
@@ -15,7 +17,7 @@ class PinScreen extends StatefulWidget {
 }
 
 class _PinScreenState extends State<PinScreen> {
-  List<String> title = ["Let’s setup your PIN", "Ok. Re type your PIN again."];
+  List<String> title = [ LocaleKeys.lets_setup_your_pin.tr(), LocaleKeys.ok_re_type_your_pin.tr(),];
   List<String> _pin = ["", ""];
   bool isEnable = true;
   bool? _isPINTrue;
