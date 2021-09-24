@@ -1,0 +1,96 @@
+// import 'package:flutter_app/constants/constants.dart';
+// import 'package:flutter_app/models/transaction.dart';
+
+// List<Transaction> DUMMY_DATA = [
+//   Transaction(
+//     id: "01",
+//     title: "pant",
+//     amount: 240,
+//     dateTime: DateTime.now().subtract(Duration(days: 2, hours: 1)),
+//     category: Categories.shopping,
+//   ),
+//   Transaction(
+//     id: "02",
+//     title: "Raman",
+//     amount: 12,
+//     dateTime: DateTime.now().subtract(Duration(days: 6, hours: 9)),
+//     category: Categories.food,
+//   ),
+//   Transaction(
+//     id: "00",
+//     title: "Shirt",
+//     amount: 120,
+//     dateTime: DateTime.now().subtract(Duration(days: 4, hours: 3)),
+//     category: Categories.shopping,
+//   ),
+//   Transaction(
+//     id: "03",
+//     title: "Briyani",
+//     amount: 10,
+//     dateTime: DateTime.now().subtract(Duration(days: 45)),
+//     category: Categories.food,
+//   ),
+//   Transaction(
+//     id: "04",
+//     title: "Netflix",
+//     amount: 70,
+//     dateTime: DateTime.now().subtract(Duration(days: 23, hours: 8)),
+//     category: Categories.subscription,
+//   ),
+//   Transaction(
+//     id: "05",
+//     title: "Mouse",
+//     amount: 50,
+//     dateTime: DateTime.now().subtract(Duration(days: 77, hours: 23)),
+//     category: Categories.shopping,
+//   ),
+//   Transaction(
+//     id: "06",
+//     title: "chocolate",
+//     amount: 10,
+//     dateTime: DateTime.now().subtract(Duration(days: 47, hours: 3)),
+//     category: Categories.food,
+//   ),
+//   Transaction(
+//     id: "07",
+//     title: "mobile",
+//     amount: 300,
+//     dateTime: DateTime.now().subtract(Duration(days: 9, hours: 2)),
+//     category: Categories.subscription,
+//   ),
+//   Transaction(
+//     id: "08",
+//     title: "Shoe",
+//     amount: 12,
+//     dateTime: DateTime.now(),
+//     category: Categories.shopping,
+//   ),
+//   Transaction(
+//     id: "09",
+//     title: "Milk",
+//     amount: 10,
+//     dateTime: DateTime.now().subtract(Duration(days: 300, hours: 3)),
+//     category: Categories.food,
+//   ),
+//   Transaction(
+//     id: "10",
+//     title: "drinks",
+//     amount: 88,
+//     dateTime: DateTime.now().subtract(Duration(days: 200)),
+//     category: Categories.food,
+//   ),
+//   Transaction(
+//     id: "11",
+//     title: "Mouse",
+//     amount: 6,
+//     dateTime: DateTime.now().subtract(Duration(hours: 5)),
+//     category: Categories.shopping,
+//   ),
+//   Transaction(
+//     id: "12",
+//     title: "Internet",
+//     amount: 300,
+//     dateTime: DateTime.now().subtract(Duration(hours: 9)),
+//     category: Categories.subscription,
+//   ),
+// ];
