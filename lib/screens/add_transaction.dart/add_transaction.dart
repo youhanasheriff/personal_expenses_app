@@ -66,9 +66,9 @@ class _AddTransactionState extends State<AddTransaction> {
         setState(() {
           String? _temp;
           String _tempDay =
-              finalDateAndTime!.day.toString().length == 1 ? "0" : "";
+              finalDateAndTime!.day.toString().trim().length == 1 ? "0" : "";
           String _tempMonth =
-              finalDateAndTime!.month.toString().length == 1 ? "0" : "";
+              finalDateAndTime!.month.toString().trim().length == 1 ? "0" : "";
           _temp =
               "$_tempDay${finalDateAndTime!.day}/$_tempMonth${finalDateAndTime!.month}/${finalDateAndTime!.year}";
           _datetime = _temp;

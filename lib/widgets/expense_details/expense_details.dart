@@ -30,9 +30,7 @@ class ExpenseDetails extends StatelessWidget {
   }
 
   String get _time {
-    var v =
-        "${tx.date.hour}:${tx.date.minute}:${tx.date.second}";
-    return DateFormat.jm().format(DateFormat("hh:mm:ss").parse(v));
+    return DateFormat.jm().format(tx.date);
   }
 
   @override

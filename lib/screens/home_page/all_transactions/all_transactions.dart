@@ -133,13 +133,11 @@ class _AllTransactionsState extends State<AllTransactions> {
     if (sortBy != null) {
       if (sortBy == Categories.newest)
         setState(() {
-          filteredTransaction
-              .sort((a, b) => b.date.compareTo(a.date));
+          filteredTransaction.sort((a, b) => b.date.compareTo(a.date));
         });
       if (sortBy == Categories.oldest)
         setState(() {
-          filteredTransaction
-              .sort((a, b) => a.date.compareTo(b.date));
+          filteredTransaction.sort((a, b) => a.date.compareTo(b.date));
         });
 
       if (sortBy == Categories.highest)
