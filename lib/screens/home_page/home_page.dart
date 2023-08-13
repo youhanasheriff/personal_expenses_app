@@ -1,22 +1,21 @@
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_app/helpers/transaction_helper.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
 
-import './components/home_top_panel.dart';
-import './all_transactions/all_transactions.dart';
-import './components/no_data_text.dart';
-import '../../models/transaction.dart';
-import '../../widgets/expenses_card_tile.dart';
-import '../../widgets/graph_chart.dart';
-import '../../config/size_config.dart';
-import '../../constants/constants.dart';
-import '../../widgets/session_title.dart';
 import '../../../local_storage/shared_preferences.dart';
 import '../../../screens/add_transaction.dart/add_transaction.dart';
 import '../../../translations/locale_keys.g.dart';
 import '../../../widgets/expense_details/expense_details.dart';
+import '../../config/size_config.dart';
+import '../../constants/constants.dart';
+import '../../helpers/transaction_helper.dart';
+import '../../models/transaction.dart';
+import '../../widgets/expenses_card_tile.dart';
+import '../../widgets/graph_chart.dart';
+import '../../widgets/session_title.dart';
+import 'all_transactions/all_transactions.dart';
+import 'components/home_top_panel.dart';
+import 'components/no_data_text.dart';
 
 class HomePage extends StatefulWidget {
   static String routeName = "/home_page";
@@ -225,9 +224,9 @@ class _HomePageState extends State<HomePage> {
           true,
           action: jumpTo2,
         ),
-        _recentTransaction.length == 0 ?
-        NoDataText(LocaleKeys.no_transaction_is_done_yet.tr()) :
-        recentTransaction(),
+        _recentTransaction.length == 0
+            ? NoDataText(LocaleKeys.no_transaction_is_done_yet.tr())
+            : recentTransaction(),
       ],
     );
   }
@@ -291,21 +290,26 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox.shrink(),
-            IconButton(
-              onPressed: () {
-                _transaction.length == 0
-                    ? customSnackbar(
-                        LocaleKeys.no_transaction_is_done_yet.tr(),
-                        LocaleKeys.ok.tr(),
-                      )
-                    : _pageController.jumpToPage(1);
+            Builder(
+              builder: (context) {
+                return IconButton(
+                  onPressed: () {
+                    _transaction.length == 0
+                        ? customSnackbar(
+                            LocaleKeys.no_transaction_is_done_yet.tr(),
+                            LocaleKeys.ok.tr(),
+                            context,
+                          )
+                        : _pageController.jumpToPage(1);
+                  },
+                  icon: SvgPicture.asset(
+                    "assets/icons/transaction.svg",
+                    color: _currentPage == 1 ? kPrimaryColor100 : Colors.grey,
+                    height: getPropotionalScreenHeight(35),
+                    width: getPropotionalScreenWidth(35),
+                  ),
+                );
               },
-              icon: SvgPicture.asset(
-                "assets/icons/transaction.svg",
-                color: _currentPage == 1 ? kPrimaryColor100 : Colors.grey,
-                height: getPropotionalScreenHeight(35),
-                width: getPropotionalScreenWidth(35),
-              ),
             ),
           ],
         ),
@@ -314,16 +318,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> customSnackbar(
-      String text, String btnText) {
-    // ignore: deprecated_member_use
-    return _key.currentState!.showSnackBar(
+    String text,
+    String btnText,
+    BuildContext context,
+  ) {
+    return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
           text,
         ),
         action: SnackBarAction(
           label: btnText,
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          },
         ),
       ),
     );
@@ -353,7 +361,7 @@ class _HomePageState extends State<HomePage> {
       },
       style: _graphController == control
           ? TextButton.styleFrom(
-              primary: kPrimaryColor100,
+              foregroundColor: kPrimaryColor100,
               shadowColor: kPrimaryColor20,
               backgroundColor: kPrimaryColor20,
               shape: const RoundedRectangleBorder(
@@ -363,7 +371,7 @@ class _HomePageState extends State<HomePage> {
               ),
             )
           : TextButton.styleFrom(
-              primary: kSecondaryTextColor,
+              foregroundColor: kSecondaryTextColor,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),

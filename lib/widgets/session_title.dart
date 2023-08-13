@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_app/translations/locale_keys.g.dart';
 
 import '../config/size_config.dart';
 import '../constants/constants.dart';
+import '../translations/locale_keys.g.dart';
 
 class SessionTitle extends StatelessWidget {
   final bool showBtn;
   final title;
-  var actionText;
+  final actionText;
   final action;
-  SessionTitle(String this.title, this.showBtn,
-      {this.action, this.actionText});
+  SessionTitle(
+    String this.title,
+    this.showBtn, {
+    this.action,
+    this.actionText = LocaleKeys.see_all,
+  });
 
   @override
   Widget build(BuildContext context) {
-    actionText = LocaleKeys.see_all.tr();
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: getPropotionalScreenWidth(12),
@@ -35,7 +37,7 @@ class SessionTitle extends StatelessWidget {
               ? TextButton(
                   onPressed: action,
                   style: TextButton.styleFrom(
-                    primary: kPrimaryColor100,
+                    foregroundColor: kPrimaryColor100,
                     shadowColor: kPrimaryColor20,
                     backgroundColor: kPrimaryColor20,
                     shape: const RoundedRectangleBorder(
@@ -44,7 +46,11 @@ class SessionTitle extends StatelessWidget {
                       ),
                     ),
                   ),
-                  child: Text(actionText),
+                  child: Text(
+                    actionText == LocaleKeys.see_all
+                        ? actionText.tr()
+                        : actionText,
+                  ),
                 )
               : Container(),
         ],

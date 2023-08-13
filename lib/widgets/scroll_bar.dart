@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../constants/constants.dart';
 
 const double _kScrollbarThickness = 8.0;
@@ -27,7 +28,7 @@ class _MyScrollbarState extends State<MyScrollbar> {
   void initState() {
     super.initState();
     _scrollController = widget.scrollController ?? ScrollController();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _updateScrollPainter(_scrollController!.position);
     });
   }
