@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
 
 import '../constants/constants.dart';
 import '../models/transaction.dart';
@@ -9,8 +8,7 @@ import '../translations/locale_keys.g.dart';
 import '../widgets/button.dart';
 import '../widgets/custom_scroll_bar/custom_radio_button.dart';
 import '../widgets/session_title.dart';
-
-import './bottom_sheets.dart/category.dart';
+import 'bottom_sheets.dart/category.dart';
 
 class FilterTransaction extends StatefulWidget {
   final txs;

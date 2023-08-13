@@ -102,7 +102,7 @@ class _SettingsPageState extends State<SettingsPage> {
     TransactionSharedPreferences.setIsPINActive(isActive);
   }
 
-  Function? _actionCurrency(BuildContext context) {
+  void _actionCurrency(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -125,7 +125,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Function? _actionLanguage(BuildContext context) {
+  void _actionLanguage(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -158,7 +158,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Function? _actionPIN(BuildContext context) {
+  void _actionPIN(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -194,9 +194,8 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Function? _helpAction(_) {
-    // ignore: deprecated_member_use
-    _key.currentState!.showSnackBar(
+  void _helpAction(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
           LocaleKeys.we_will_add_this_page_soon.tr(),
@@ -255,7 +254,7 @@ class _SettingsPageState extends State<SettingsPage> {
               SettingsItems(
                 title: LocaleKeys.help.tr(),
                 btnTitle: "",
-                action: _helpAction,
+                action: () => _helpAction(context),
               ),
             ],
           ),

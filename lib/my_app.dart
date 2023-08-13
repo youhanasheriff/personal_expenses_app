@@ -49,8 +49,8 @@ class _MyAppState extends State<MyApp> {
             fontFamily: "Inter",
             primarySwatch: Colors.deepOrange,
             textTheme: TextTheme(
-              bodyText1: TextStyle(color: kPrimaryTextColor),
-              bodyText2: TextStyle(color: kPrimaryTextColor),
+              bodyLarge: TextStyle(color: kPrimaryTextColor),
+              bodyMedium: TextStyle(color: kPrimaryTextColor),
             ),
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
