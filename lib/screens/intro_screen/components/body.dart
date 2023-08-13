@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_app/translations/locale_keys.g.dart';
+import 'package:flutter/material.dart';
 
 import '../../../constants/constants.dart';
 import '../../../screens/pin_screen/setup_pin.dart';
+import '../../../translations/locale_keys.g.dart';
 import '../../../widgets/button.dart';
-
-import './intro_screen_content.dart';
+import 'intro_screen_content.dart';
 
 class Body extends StatefulWidget {
   Body({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
-// import 'package:flutter_app/constants/constants.dart';
-// import 'package:flutter_app/models/transaction.dart';
+// import 'package:personal_expenses/constants/constants.dart';
+// import 'package:personal_expenses/models/transaction.dart';
 
 // List<Transaction> DUMMY_DATA = [
 //   Transaction(

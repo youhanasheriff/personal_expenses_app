@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_app/config/size_config.dart';
-import 'package:flutter_app/constants/constants.dart';
-import 'package:flutter_app/local_storage/shared_preferences.dart';
-import 'package:flutter_app/models/localization.dart';
-import 'package:flutter_app/screens/intro_screen/intro_screen.dart';
-import 'package:flutter_app/widgets/button.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../config/size_config.dart';
+import '../../constants/constants.dart';
+import '../../local_storage/shared_preferences.dart';
+import '../../models/localization.dart';
+import '../../widgets/button.dart';
+import '../intro_screen/intro_screen.dart';
 
 class SetLang extends StatefulWidget {
   static String routeName = "/set_lang";

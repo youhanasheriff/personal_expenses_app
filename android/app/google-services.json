@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "210692987125",
+    "project_id": "personal-expenses-2021",
+    "storage_bucket": "personal-expenses-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210692987125:android:d408b7cbf8a29cd2cb0dbc",
+        "android_client_info": {
+          "package_name": "com.youhanasheriff.expenses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210692987125-br6493o0qms0bausq0qfitn14a8lcrvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKWtbaerE9GMqWNs0K1pFtS7l0j4AASQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210692987125-br6493o0qms0bausq0qfitn14a8lcrvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

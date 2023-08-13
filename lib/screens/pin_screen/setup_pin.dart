@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 
-import './pin_code_screen.dart';
 import '../../local_storage/shared_preferences.dart';
 import '../../models/transaction.dart';
 import '../../screens/all_set/all_set.dart';
 import '../../screens/settings/settings.dart';
+import '../../translations/locale_keys.g.dart';
+import 'pin_code_screen.dart';
 
 class PinScreen extends StatefulWidget {
   static String routeName = "/setup_pin";
@@ -17,7 +17,10 @@ class PinScreen extends StatefulWidget {
 }
 
 class _PinScreenState extends State<PinScreen> {
-  List<String> title = [ LocaleKeys.lets_setup_your_pin.tr(), LocaleKeys.ok_re_type_your_pin.tr(),];
+  List<String> title = [
+    LocaleKeys.lets_setup_your_pin.tr(),
+    LocaleKeys.ok_re_type_your_pin.tr(),
+  ];
   List<String> _pin = ["", ""];
   bool isEnable = true;
   bool? _isPINTrue;
